@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Scanner.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sh="http://sharpnado.com"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:y="clr-namespace:MVVMHelpers.Views;assembly=MVVMHelpers"
+    BackgroundColor="#000000">
+
+    <Grid RowDefinitions="*">
+
+        <Grid.Background>
+            <RadialGradientBrush Center="0.5, 0.5" Radius="1">
+                <GradientStop Offset="0" Color="#221976d2" />
+                <GradientStop Offset="1" Color="Black" />
+            </RadialGradientBrush>
+        </Grid.Background>
+
+        <StackLayout Margin="30,30,0,0" HorizontalOptions="Start"
+                     VerticalOptions="Start"
+                     Orientation="Horizontal">
+
+            <Image Source="bluetooth"
+                   HeightRequest="25"
+                   xct:IconTintColorEffect.TintColor="White"/>
+            <Label
+                Margin="10,0,0,0"
+                FontSize="Title"
+                FontAttributes="Bold"
+                Text="Bluetooth Scanner"
+                TextColor="White" />
+        </StackLayout>
+
+        <Grid Grid.Row="0">
+            <y:CircularWave
+                HeightRequest="600"
+                HorizontalOptions="Center"
+                Scale="1"
+                VerticalOptions="Center"
+                WidthRequest="600"
+                Color="{StaticResource Blue}" />
+            <Image
+                xct:IconTintColorEffect.TintColor="White"
+                HeightRequest="30"
+                HorizontalOptions="Center"
+                Source="bluetooth"
+                VerticalOptions="Center"
+                WidthRequest="30" />
+        </Grid>
+
+        <y:CircularWave
+            Margin="30,0,0,0"
+            HeightRequest="60"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+            WidthRequest="60"
+            Color="{StaticResource DeepPurple}" />
+
+        <y:CircularWave
+            Margin="0,0,50,60"
+            HeightRequest="60"
+            HorizontalOptions="End"
+            VerticalOptions="Center"
+            WidthRequest="60"
+            Color="{StaticResource Red}" />
+
+        <y:CircularWave
+            Margin="30,250,0,0"
+            HeightRequest="60"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="60"
+            Color="{StaticResource Orange}" />
+
+
+        <StackLayout
+            Margin="0,0,0,60"
+            HorizontalOptions="Center"
+            Orientation="Horizontal"
+            VerticalOptions="End">
+            <Label
+                FontSize="Title" 
+                FontAttributes="Bold"
+                TextColor="{StaticResource Cyan}" >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="3 Devices"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

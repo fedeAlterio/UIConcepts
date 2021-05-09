@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Scanner.CinemaPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sh="http://sharpnado.com"
+    BackgroundColor="Black">
+
+
+    <Grid RowDefinitions="auto, *, auto">
+
+
+        <Grid
+            x:Name="Background"
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <Image
+                Aspect="AspectFill"
+                HorizontalOptions="FillAndExpand"
+                Source="harry_potter"
+                VerticalOptions="FillAndExpand" />
+            <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <BoxView.Background>
+                    <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                        <GradientStop Offset="0" Color="Black" />
+                        <GradientStop Offset="0" Color="#dd000000" />
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+        </Grid>
+
+        <sh:Shadows
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            Margin="0,70,40,0">
+            <sh:Shadows.Shades>
+                <sh:ImmutableShades>
+                    <sh:Shade BlurRadius="10"
+                      Opacity="0.5"                              
+                      Offset="0,0"
+                      Color="{StaticResource Orange}" />
+                </sh:ImmutableShades>
+            </sh:Shadows.Shades>
+                <Frame
+                    Padding="5"
+                    BackgroundColor="{StaticResource Orange}"
+                    CornerRadius="10"
+                    HeightRequest="25"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    WidthRequest="25">
+
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding SelectedSits}"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                </Frame>
+        </sh:Shadows>
+
+        <StackLayout Margin="30,50,0,0" Spacing="0">
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="35"
+                Text="Harry Potter" />
+
+            <Label
+                Margin="0,0,0,0"
+                FontAttributes="None"
+                FontSize="17"
+                Text="and the Prisoner of Azkaban" />
+        </StackLayout>
+
+        <StackLayout
+            Grid.Row="1"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Center">
+
+
+            <Path HorizontalOptions="Center" StrokeThickness="3">
+
+                <Path.Stroke>
+                    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                        <GradientStop Offset="0" Color="Transparent" />
+                        <GradientStop Offset="0.5" Color="White" />
+                        <GradientStop Offset="1" Color="Transparent" />
+                    </LinearGradientBrush>
+                </Path.Stroke>
+
+                <Path.Data>
+                    <PathGeometry>
+                        <PathGeometry.Figures>
+                            <PathFigureCollection>
+                                <PathFigure IsClosed="False" StartPoint="0,30">
+                                    <PathFigure.Segments>
+                                        <PathSegmentCollection>
+                                            <BezierSegment
+                                                Point1="40,0"
+                                                Point2="260,0"
+                                                Point3="300,30" />
+                                        </PathSegmentCollection>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathFigureCollection>
+                        </PathGeometry.Figures>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+
+            <Path
+                Margin="0,-27,0,0"
+                HorizontalOptions="Center"
+                ScaleX="0.98"
+                StrokeThickness="20">
+
+                <Path.Stroke>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Offset="0" Color="#18ffffff" />
+                        <GradientStop Offset="0.6" Color="Transparent" />
+                    </LinearGradientBrush>
+                </Path.Stroke>
+
+                <Path.Data>
+                    <PathGeometry>
+                        <PathGeometry.Figures>
+                            <PathFigureCollection>
+                                <PathFigure IsClosed="False" StartPoint="0,30">
+                                    <PathFigure.Segments>
+                                        <PathSegmentCollection>
+                                            <BezierSegment
+                                                Point1="40,0"
+                                                Point2="260,0"
+                                                Point3="300,30" />
+                                        </PathSegmentCollection>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathFigureCollection>
+                        </PathGeometry.Figures>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+
+            <Grid
+                x:Name="SitsGrid"
+                Margin="0,40,0,0"
+                HorizontalOptions="Center" />
+
+            <StackLayout
+                Margin="0,40,0,0"
+                HorizontalOptions="Center"
+                Orientation="Horizontal">
+                <Ellipse
+                    Fill="White"
+                    HeightRequest="20"
+                    Opacity="0.15"
+                    WidthRequest="20" />
+                <Label
+                    Margin="5,0,0,0"
+                    Text="Available"
+                    VerticalOptions="Center" />
+
+                <Ellipse
+                    Margin="15,0,0,0"
+                    HeightRequest="20"
+                    WidthRequest="20">
+                    <Ellipse.Fill>
+                        <SolidColorBrush Color="{StaticResource Orange}" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Label
+                    Margin="5,0,0,0"
+                    Text="Selected"
+                    VerticalOptions="Center" />
+
+
+                <Ellipse
+                    Margin="15,0,0,0"
+                    Fill="White"
+                    HeightRequest="20"
+                    WidthRequest="20" />
+                <Label
+                    Margin="5,0,0,0"
+                    Text="Reserved"
+                    VerticalOptions="Center" />
+
+
+            </StackLayout>
+        </StackLayout>
+
+        <Button
+            Grid.Row="2"
+            HeightRequest="50"
+            Text="Checkout">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                    <GradientStop Offset="0" Color="{StaticResource Red}" />
+                    <GradientStop Offset="1" Color="DarkRed" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:y="clr-namespace:MVVMHelpers.Views;assembly=MVVMHelpers"
+             x:Class="Scanner.App"             
+             >
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Add more resources here -->
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Add more resource dictionaries here -->
+                <y:Colors/>
+                <!-- Add more resource dictionaries here -->
+            </ResourceDictionary.MergedDictionaries>
+            <!-- Add more resources here -->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
